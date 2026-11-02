@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Persistent Navigation Bar -->
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <!-- Feature 1 Hook: Dark Mode Toggle -->
+                <li><button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="animate-on-scroll">
+            <!-- Feature 2 Hook: Dynamic Greeting -->
+            <h1><span id="greeting">Hello</span>, I'm Muqhree Bin Zainal Abidin Saad</h1>
+            <!-- Feature 3 Hook: Typing Effect -->
+            <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
+            <p>Welcome to my personal portfolio where I showcase my journey after secondary school.</p>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="animate-on-scroll">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <!-- Profile Image -->
+                <img src="profile.PNG" class="profile-img">
+            <p>My name is Muqhree. I am from Miri Sarawak and I am 24 years old.</p>
+            <h3>Education</h3>
+            <ul>
+                <li><strong>Universiti Malaysia Sarawak (UNIMAS)(2024-Current)</strong> - Degree in Network Computing (Currently in 3rd Year)</li>
+                <li><strong>Politeknik Kuching (2020-2023)</strong> - Diploma in Electrical and Electronic Engineering</li>
+            </ul>
+            <h3>Experience</h3>
+            <ul>
+                <li><strong>Internship at Essem Corporation (Miri)(2023)</strong> - Valve servicing and refurbish technician</li>
+            </ul>
+            <h3>Technical Skills</h3>
+            <p>Able to do hydro testing on serviced and refurbished valve, operate on motor operated valve(MOV), can use MyPhp and MYSQL for database.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="animate-on-scroll">
+            <h2>My Projects</h2>
+            
+            <!-- Feature 4 Hook: Project Filtering -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="software">Software</button>
+                <button class="filter-btn" data-filter="design">UI/UX Design</button>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card" data-category="web">
+                    <h3>1. Student Record Management</h3>
+                    <p>A web-based system for querying, updating, and deleting student records using PHP and MySQL.</p>
+                    <button class="view-details-btn" data-title="Student Record Management" data-desc="Built a full CRUD application using PHP and MySQL to manage university student databases efficiently. Implemented secure login and data sanitization.">View Details</button>
+                </article>
+
+                <article class="project-card" data-category="software">
+                    <h3>2. Fingerprint Sensor and Detector</h3>
+                    <p>A biometric access system that unlocks a door via fingerprint and sends mobile alerts for unauthorized attempts.</p>
+                    <button class="view-details-btn" data-title="Fingerprint Sensor and Detector" data-desc="Built a security system integrating a fingerprint sensor for physical access control. If an unregistered fingerprint is scanned, the system denies entry and automatically triggers a warning notification to a connected smartphone.">View Details</button>
+                </article>
+
+                <article class="project-card" data-category="software">
+                    <h3>3. Round Robin CPU Scheduler</h3>
+                    <p>An OS project modeling context switching overhead utilizing Java.</p>
+                    <button class="view-details-btn" data-title="Round Robin CPU Scheduler" data-desc="Simulated process management utilizing the Round Robin algorithm to visualize context switch overheads in Operating Systems.">View Details</button>
+                </article>
+
+                <article class="project-card" data-category="design">
+                    <h3>4. Electric Vehicle Dashboard UI</h3>
+                    <p>An HCI group project designing an interactive EV dashboard prototype in Figma.</p>
+                    <button class="view-details-btn" data-title="Electric Vehicle Dashboard UI" data-desc="Served as UI Lead. Designed high-fidelity wireframes and interactive prototypes in Figma focusing on driver accessibility and dark mode aesthetics.">View Details</button>
+                </article>
+
+                <article class="project-card" data-category="software">
+                    <h3>5. Word Frequency Analyzer</h3>
+                    <p>A Java Swing GUI application reading text files to compute word frequency.</p>
+                    <button class="view-details-btn" data-title="Word Frequency Analyzer" data-desc="Built a desktop application using Java Swing. Users upload a .txt file, and the program parses the data to output a sorted list of the most used words.">View Details</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="animate-on-scroll">
+            <h2>Contact Me</h2>
+            <p>Let's connect! Send me a message below.</p>
+            
+            <!-- Feature 5 Hook: Form Validation -->
+            <form id="contact-form" action="#" method="POST" novalidate>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <span class="error-msg" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <span class="error-msg" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                    <span class="error-msg" id="message-error"></span>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Feature 6 Hook: Custom Modal for Projects -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Title</h3>
+            <p id="modal-desc">Description</p>
+        </div>
+    </div>
+
+    <!-- Feature 7 Hook: Scroll to top button -->
+    <button id="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Feature 8 Hook: Dynamic Year -->
+        <p>&copy; <span id="year"></span> By Muqhree. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Link to JS File -->
+    <script src="script.js"></script>
+</body>
+</html>
